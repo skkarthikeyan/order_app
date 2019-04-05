@@ -1,0 +1,33 @@
+{
+  "name": "orderapp",
+  "version": "1.0.0",
+  "description": "Order Management",
+  "main": "app.js",
+  "scripts": {
+    "start": "npm run serve",
+    "serve": "node start.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skkarthikeyan/order_app.git"
+  },
+  "keywords": [
+    "order"
+  ],
+  "author": "Karthikeyan Kaliyamoorthy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skkarthikeyan/order_app/issues"
+  },
+  "homepage": "https://github.com/skkarthikeyan/order_app#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "sequelize": "^5.2.12"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0"
+  }
+}

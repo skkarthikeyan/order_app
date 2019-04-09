@@ -1,4 +1,4 @@
-let vConfig = require('../config/config.json')['DEV'];
+let vConfig = require('../config/config.json')['PROD'];
 import sequelize from 'sequelize';
 
 export class SequelizeService {

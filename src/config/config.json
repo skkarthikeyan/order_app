@@ -19,5 +19,26 @@
                 "ssl": true
             }
         }
+    },
+    "PROD": {
+        "Host": "https://apporders.herokuapp.com/",
+        "db": {
+            "dialect": "postgres",
+            "host": "ec2-54-247-185-214.eu-west-1.compute.amazonaws.com",
+            "schema": "public",
+            "username": "ispxavswprmkgl",
+            "password": "114b99802ce5abaeae1537c30e0e77f3bc423b65c21983f2a72518c5c222b685",
+            "name": "d48ovknp83re95",
+            "port": 5432,
+            "timezone": "+08:00",
+            "pool": {
+                "min": 0,
+                "max": 5,
+                "idle": 10000
+            },
+            "dialectOptions": {
+                "ssl": true
+            }
+        }
     }
 }

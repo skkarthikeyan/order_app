@@ -25,6 +25,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "pg": "^6.4.2",
+    "prettier": "^1.16.4",
     "sequelize": "^3.34.0"
   },
   "devDependencies": {

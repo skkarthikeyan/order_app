@@ -3,6 +3,7 @@ import { DataAccessService } from "./../utils/dataaccess.service";
 export let createOrder = (req, res) => {
     try {
         let params = req.body;
+        console.log('params', params);
         DataAccessService.executeSPWithCallback('sp_create_order', params, true, (queryResponse) => {
             if (queryResponse.status === 0) {
                 res.send(queryResponse.result);
@@ -17,6 +18,10 @@ export let createOrder = (req, res) => {
     }
 }
 
+let callPayment = ()=>{
+    //  call payment app
+}
+
 export let cancelOrder = (req, res) => {
     try {
         let orderid = req.params.orderid;
@@ -24,12 +29,10 @@ export let cancelOrder = (req, res) => {
             res.status(400).send("Invalid Parameter");
         }
         else{
-            let params = {
-                "order_id": orderid
-            }
-            DataAccessService.executeSPWithCallback('sp_cancel_order', params, true, (queryResponse) => {
+            DataAccessService.executeSPWithCallback('sp_cancel_order', orderid, false, (queryResponse) => {
                 if (queryResponse.status === 0) {
-                    res.send(queryResponse.result);
+                    let result = queryResponse.result+ ' It\'s current state is "'+queryResponse.current_order_state+'".';
+                    res.send(result);
                 }
                 else {
                     res.status(500).send("Error: " + JSON.stringify(queryResponse));
@@ -50,10 +53,7 @@ export let getOrderStatus = (req, res) => {
             res.status(400).send("Invalid Parameter");
         }
         else {
-            let params = {
-                "order_id": orderid
-            }
-            DataAccessService.executeSPWithCallback('sp_order_status', params, true, (queryResponse) => {
+            DataAccessService.executeSPWithCallback('sp_order_status', orderid, false, (queryResponse) => {
                 if (queryResponse.status === 0) {
                     res.send(queryResponse.result);
                 }

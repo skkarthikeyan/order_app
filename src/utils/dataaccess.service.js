@@ -28,7 +28,7 @@ export class DataAccessService {
             }
             let vSQL = 'SELECT ' + pSPName + vParams;
             console.log('vSQL', vSQL);
-            SequelizeService.sequelize.query(vSQL, { type: SequelizeService.sequelize.QueryTypes.SELECT }).then(function (pResult) {
+            SequelizeService.vSequelize.query(vSQL, { type: SequelizeService.vSequelize.QueryTypes.SELECT }).then(function (pResult) {
                 let vResult = pResult[0][pSPName.toLowerCase()];
                     callback(vResult);
             }).catch(function (pErr) {

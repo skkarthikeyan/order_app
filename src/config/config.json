@@ -1,6 +1,7 @@
 {
     "DEV": {
         "Host": "localhost:3000",
+        "encryption_key": "asdjh7832ruigiou38q2e23urkfui3u",
         "db": {
             "dialect": "postgres",
             "host": "ec2-54-247-185-214.eu-west-1.compute.amazonaws.com",
@@ -18,10 +19,16 @@
             "dialectOptions": {
                 "ssl": true
             }
+        },
+        "payment": {
+            "url": "http://localhost:3000/api/payment/paymentorder/",
+            "merchant_code":"fuyf7876357edi8578ty7i7g",
+            "merchant_key":"7682tgdgyu3"
         }
     },
     "PROD": {
         "Host": "https://apporders.herokuapp.com/",
+        "encryption_key": "asdjh7832ruigiou38q2e23urkfui3u",
         "db": {
             "dialect": "postgres",
             "host": "ec2-54-247-185-214.eu-west-1.compute.amazonaws.com",
@@ -38,6 +45,12 @@
             },
             "dialectOptions": {
                 "ssl": true
+            }
+        },
+        "payment": {
+            "url": "https://appayment.herokuapp.com/api/payment/paymentorder/",
+            "headers": {
+                "Content-Type": "application/json"
             }
         }
     }

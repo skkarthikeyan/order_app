@@ -3,10 +3,11 @@ import * as orderController from './controller/order'
 
 const app = express();
 
+require("babel-polyfill");
 var sequelize_service = require("./utils/sequelize.service");
 var seq = new sequelize_service.SequelizeService();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json({ limit: "50mb" }));
